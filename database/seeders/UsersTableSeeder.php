@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'testing@gmail.com',
             'password' => bcrypt('secret'),
             'created_at' => date('Y-m-d H:i:s'),
+            'updated_At' => date('Y-m-d H:i:s'),
         ]);
     }
 }
