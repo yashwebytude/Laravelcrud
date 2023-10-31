@@ -18,6 +18,8 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 
@@ -43,8 +45,8 @@ tr:nth-child(even) {
     <td>{{$prod->name}}</td>
     <td>{{$prod->price}}</td>
     <td>
-        <a href="{{route('restoreentry',[$prod->id])}}">Restore</a>
-        <a href="{{route('permenentdelete',[$prod->id])}}">Permenent Delete</a>
+        <a href="{{route('restoreentry',[$prod->id])}}" data-toggle="tooltip" data-placement="top" title="Read"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+        <a href="{{route('permenentdelete',[$prod->id])}}" data-toggle="tooltip" data-placement="top" title="Permenent Delete">Permenent Delete</a>
     </td>
   </tr>
   @endforeach
