@@ -14,20 +14,28 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
-        $validated = $request->validate([
+        $validation = $request->validate([
             'name' => 'required',
             'price' => 'required',
+        ], [
+            'name.required' => 'Name is required',
+            'price.required' => 'Price is required'
+
         ]);
 
         $product = new Product;
         $product->name = $request->name;
         $product->price = $request->price;
         $product->save();
-        // return redirect()->route('itemsform');
         return view('creates',compact('product'));
     }
     
     public function store1(Request $request){
+        $validated = $request->validate([
+            'quntity' => 'required',
+        ], [
+            'quntity.required' => 'Quntity is required',
+        ]);
         $product = Product::find($request->id);
         $product->quntity = $request->quntity;
         $product->save();
