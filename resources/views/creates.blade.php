@@ -10,7 +10,12 @@
     @csrf
         <div>
             <input type="hidden" name="id" value="{{$product->id}}">
-            <input type="text" name="quntity" value="" placeholder="Color"><br><br>
+            <input type="text" name="quntity" value="" placeholder="Quntity"><br><br>
+            @if ($errors->has('quntity'))
+            <span>
+            {{$errors->first('quntity')}}
+            </span><br><br>
+            @endif
             <input type="submit">
         </div>
     </form>
