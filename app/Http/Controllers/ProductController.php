@@ -14,6 +14,11 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
+        $validated = $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+        ]);
+
         $product = new Product;
         $product->name = $request->name;
         $product->price = $request->price;
@@ -51,8 +56,6 @@ class ProductController extends Controller
 
     public function index(){
         $product = Product::all();
-        // $product = Item::find(7);
-        // dd($product->product);
         return view('table',compact('product'));
     }
 
